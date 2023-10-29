@@ -21,4 +21,13 @@ public class Main {
 		Runnable lambda = () -> INFO."This is a info \{test} from within a lambda";
 		lambda.run();
 	}
+	/*
+	* Prints outs:
+	* 09:15:33.309 [main] INFO de.darenkster.stringtemplates2slf4j.Main -- This is a info test
+	* 09:15:33.311 [main] ERROR de.darenkster.stringtemplates2slf4j.Main -- This is a error test
+	* 09:15:33.312 [main] DEBUG de.darenkster.stringtemplates2slf4j.Main -- This is a debug test
+	* 09:15:33.312 [main] WARN de.darenkster.stringtemplates2slf4j.Main -- This is a warn test
+	* 09:15:33.313 [main] INFO de.darenkster.stringtemplates2slf4j.Main -- This is a info test from within a anonymous class
+	* 09:15:33.314 [main] INFO de.darenkster.stringtemplates2slf4j.Main -- This is a info test from within a lambda
+	*/
 }
