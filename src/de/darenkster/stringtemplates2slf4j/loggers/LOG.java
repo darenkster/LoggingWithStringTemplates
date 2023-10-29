@@ -68,7 +68,7 @@ public class LOG{
 					
 			});
 		
-			Class<?> clazz = stackTrace.get(0).getDeclaringClass();
+			Class<?> clazz = stackTrace.getFirst().getDeclaringClass();
 			return LoggerFactory.getLogger(clazz);
 	}
 
