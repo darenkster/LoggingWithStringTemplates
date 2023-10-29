@@ -15,6 +15,7 @@ import java.util.stream.Collectors;
 * INFO."Logtext"
 */
 public class LOG{
+
     /* The Logger Fields*/
     public static final Processor<Void, RuntimeException> INFO;
     public static final Processor<Void, RuntimeException> ERROR;
