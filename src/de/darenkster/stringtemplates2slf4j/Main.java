@@ -14,7 +14,7 @@ public class Main {
 		
 		new Object() {
 			public void log() {
-				INFO."This is a info \{test} from within a anonymous class";
+				INFO."This is a info \{test} from within an anonymous class";
 			}
 		}.log();
 		
