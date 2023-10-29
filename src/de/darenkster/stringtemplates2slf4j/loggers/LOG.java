@@ -58,7 +58,7 @@ public class LOG{
 	/** Looking up what class is calling the Logger */
 	public static final Logger getLoggerForDeclaringClass() {
 		List<StackFrame> stackTrace = StackWalker.getInstance(StackWalker.Option.RETAIN_CLASS_REFERENCE).walk((sfs) -> {
-			return sfs
+				return sfs
 					// TODO more filters for classes with weird names
 					.filter((StackFrame sf) -> !sf.getDeclaringClass().isAnonymousClass())
 					.filter((StackFrame sf) -> !sf.getDeclaringClass().equals(LOG.class))
