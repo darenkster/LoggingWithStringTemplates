@@ -7,15 +7,18 @@ The different loggers (info, debug, error etc) are defined in die class LOG as f
 To use the loggers ether call them directly:
 
 ```
+import de.darenkster.stringtemplates2slf4j.loggers.LOG;
+
+...
+
 LOG.INFO."Text \{variable}"
 ```
 or statically import the fields from the LOG class:
 ```
-import static  de.darenkster.stringtemplates2slf4j.loggers.LOG.*;
+import static de.darenkster.stringtemplates2slf4j.loggers.LOG.*;
 
 ...
 
 INFO."Text \{variable}"
-
 ```
 The calling class ist determied via the StackWalker API, which gets the first class that isn't anonymous.
