@@ -26,42 +26,27 @@ public class LOG{
     static {
         INFO = StringTemplate.Processor.of((StringTemplate stringTemplate) -> {
             Logger logger = getLoggerForCallingClass();
-            interpolateAndLog(stringTemplate, 
-                (message,throwable) -> logger.info(message, throwable),
-                (message) -> logger.info(message) 
-                );
+            interpolateAndLog(stringTemplate, logger::info, logger::info);
             return null;
         });
         ERROR = StringTemplate.Processor.of((StringTemplate stringTemplate) -> {
             Logger logger = getLoggerForCallingClass();
-            interpolateAndLog(stringTemplate, 
-                (message,throwable) -> logger.error(message, throwable),
-                (message) -> logger.error(message) 
-                );
+            interpolateAndLog(stringTemplate, logger::error, logger::error);
             return null;
         });
         DEBUG = StringTemplate.Processor.of((StringTemplate stringTemplate) -> {
             Logger logger = getLoggerForCallingClass();
-            interpolateAndLog(stringTemplate, 
-                (message,throwable) -> logger.debug(message, throwable),
-                (message) -> logger.debug(message) 
-                );
+            interpolateAndLog(stringTemplate, logger::debug, logger::debug);
             return null;
         });
         WARN = StringTemplate.Processor.of((StringTemplate stringTemplate) -> {
             Logger logger = getLoggerForCallingClass();
-            interpolateAndLog(stringTemplate, 
-                (message,throwable) -> logger.warn(message, throwable),
-                (message) -> logger.warn(message) 
-                );
+            interpolateAndLog(stringTemplate, logger::warn, logger::warn);
             return null;
         });
         TRACE = StringTemplate.Processor.of((StringTemplate stringTemplate) -> {
             Logger logger = getLoggerForCallingClass();
-            interpolateAndLog(stringTemplate, 
-                (message,throwable) -> logger.trace(message, throwable),
-                (message) -> logger.trace(message) 
-                );
+            interpolateAndLog(stringTemplate, logger::trace, logger::trace);
             return null;
         });
     }
