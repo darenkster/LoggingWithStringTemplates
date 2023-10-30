@@ -26,27 +26,37 @@ public class LOG{
     static {
         INFO = StringTemplate.Processor.of((StringTemplate stringTemplate) -> {
             Logger logger = getLoggerForCallingClass();
-            interpolateAndLog(stringTemplate, logger::info, logger::info);
+            if(logger.isInfoEnabled()) {
+                interpolateAndLog(stringTemplate, logger::info, logger::info);
+            }
             return null;
         });
         ERROR = StringTemplate.Processor.of((StringTemplate stringTemplate) -> {
             Logger logger = getLoggerForCallingClass();
-            interpolateAndLog(stringTemplate, logger::error, logger::error);
+            if(logger.isErrorEnabled()) {
+                interpolateAndLog(stringTemplate, logger::error, logger::error);
+            }
             return null;
         });
         DEBUG = StringTemplate.Processor.of((StringTemplate stringTemplate) -> {
             Logger logger = getLoggerForCallingClass();
-            interpolateAndLog(stringTemplate, logger::debug, logger::debug);
+            if(logger.isDebugEnabled()) {
+                interpolateAndLog(stringTemplate, logger::debug, logger::debug);
+            }
             return null;
         });
         WARN = StringTemplate.Processor.of((StringTemplate stringTemplate) -> {
             Logger logger = getLoggerForCallingClass();
-            interpolateAndLog(stringTemplate, logger::warn, logger::warn);
+            if(logger.isWarnEnabled()) {
+                interpolateAndLog(stringTemplate, logger::warn, logger::warn);
+            }
             return null;
         });
         TRACE = StringTemplate.Processor.of((StringTemplate stringTemplate) -> {
             Logger logger = getLoggerForCallingClass();
-            interpolateAndLog(stringTemplate, logger::trace, logger::trace);
+            if(logger.isTraceEnabled()) {
+                interpolateAndLog(stringTemplate, logger::trace, logger::trace);
+            }
             return null;
         });
     }
